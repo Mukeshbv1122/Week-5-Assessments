@@ -1,0 +1,13 @@
+<div class="container">
+  <div *ngIf="employees.length > 0; else noRecords">
+    <ul>
+      <li *ngFor="let emp of employees">
+        {{emp.code}} - {{emp.name}}
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noRecords>
+    <h1>No records available</h1>
+  </ng-template>
+</div>

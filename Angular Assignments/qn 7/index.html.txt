@@ -1,0 +1,4 @@
+<h1 *ngIf="employees.length === 0; else showList">There are no records</h1>
+<ng-template #showList>
+  <ul><li *ngFor="let emp of employees">{{emp.name}}</li></ul>
+</ng-template>

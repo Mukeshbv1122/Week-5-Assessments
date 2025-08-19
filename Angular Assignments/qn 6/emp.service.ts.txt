@@ -1,0 +1,1 @@
+addEmployee(emp: any){ this.employees.push(emp); }

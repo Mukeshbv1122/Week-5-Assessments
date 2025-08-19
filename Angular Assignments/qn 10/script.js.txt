@@ -1,0 +1,60 @@
+const apiProducts = "http://localhost:3000/products";
+const apiSave = "http://localhost:3000/saveforLater";
+
+function getProducts() {
+  return fetch(apiProducts)
+    .then(res => res.json())
+    .then(data => {
+      const ul = document.getElementById("products");
+      ul.innerHTML = "";
+      data.forEach(p => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <img src="${p.thumbnail}" width="50"> 
+          <b>${p.title}</b> - ₹${p.price}
+          <button onclick="addsaveforlater(${p.id})">Save</button>
+        `;
+        ul.appendChild(li);
+      });
+      return data;
+    });
+}
+
+function getsaveforlater() {
+  return fetch(apiSave)
+    .then(res => res.json())
+    .then(data => {
+      const ul = document.getElementById("saveforlater");
+      ul.innerHTML = "";
+      data.forEach(p => {
+        const li = document.createElement("li");
+        li.innerHTML = `<b>${p.title}</b> - ₹${p.price}`;
+        ul.appendChild(li);
+      });
+      return data;
+    });
+}
+
+function addsaveforlater(id) {
+  fetch(apiProducts + "/" + id)
+    .then(res => res.json())
+    .then(product => {
+      return fetch(apiSave, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(product)
+      });
+    })
+    .then(() => getsaveforlater());
+}
+
+function deleteAllProducts() {
+  fetch(apiProducts)
+    .then(res => res.json())
+    .then(products => {
+      products.forEach(p => {
+        fetch(apiProducts + "/" + p.id, { method: "DELETE" });
+      });
+    })
+    .then(() => getProducts());
+}

@@ -1,0 +1,11 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({ providedIn: 'root' })
+export class EmpService {
+  employees: any[] = [
+    { code: 'emp101', name: 'Mukesh', gender: 'Male', annualSalary: 5500, dateOfBirth: '1988-06-25' },
+    { code: 'emp102', name: 'Hardik', gender: 'Male', annualSalary: 5700.95, dateOfBirth: '1982-06-09' },
+  ];
+
+  getEmployees() { return this.employees; }
+}

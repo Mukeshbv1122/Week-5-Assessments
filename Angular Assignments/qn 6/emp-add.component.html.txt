@@ -1,0 +1,8 @@
+<form (ngSubmit)="addEmp()">
+<input [(ngModel)]="emp.code" name="code" placeholder="Code" required>
+<input [(ngModel)]="emp.name" name="name" placeholder="Name" required>
+<input [(ngModel)]="emp.gender" name="gender" placeholder="Gender" required>
+<input [(ngModel)]="emp.annualSalary" name="salary" type="number" placeholder="Salary" required>
+<input [(ngModel)]="emp.dateOfBirth" name="dob" type="date" placeholder="DOB" required>
+<button type="submit">Add Employee</button>
+</form>

@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "iPhone 16",
+      "description": "An apple mobile",
+      "price": 549,
+      "rating": 4.69,
+      "stock": 94,
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Samsung Galaxy Book",
+      "description": "Laptop with Intel",
+      "price": 1499,
+      "rating": 4.25,
+      "stock": 50,
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
+    }
+  ]
+}

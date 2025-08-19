@@ -1,0 +1,27 @@
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>DOB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{emp.code}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.annualSalary}}</td>
+        <td>{{emp.dateOfBirth}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5">Total Employees: {{employees.length}}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

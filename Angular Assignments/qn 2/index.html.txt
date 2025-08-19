@@ -1,0 +1,4 @@
+<h1>Qn2: Change Name & Age</h1>
+<input [(ngModel)]="name" placeholder="Name">
+<input [(ngModel)]="age" type="number" placeholder="Age">
+<p>Hello {{name}}, your age is {{age}}</p>

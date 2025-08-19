@@ -1,0 +1,9 @@
+import { Component } from '@angular/core';
+import { EmpService } from './emp.service';
+
+@Component({ selector:'app-emp-add', templateUrl:'emp-add.component.html' })
+export class EmpAddComponent{
+  emp={code:'', name:'', gender:'', annualSalary:0, dateOfBirth:''};
+  constructor(private empService:EmpService){}
+  addEmp(){ this.empService.addEmployee(this.emp); this.emp={code:'', name:'', gender:'', annualSalary:0, dateOfBirth:''}; }
+}

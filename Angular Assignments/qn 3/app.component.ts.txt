@@ -1,0 +1,17 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  name: string = 'Mukesh';
+  age: number = 18;
+
+  getCategory(): string {
+    if(this.age < 13) return `Hello ${this.name}, you are a child`;
+    else if(this.age >= 13 && this.age <= 19) return `Hello ${this.name}, you are a teenager`;
+    else return `Hello ${this.name}, you are an adult`;
+  }
+}

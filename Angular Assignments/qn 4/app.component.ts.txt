@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  employees = [
+    { code: 'emp101', name: 'Mukesh', gender: 'Male', annualSalary: 5500, dateOfBirth: '25/06/1988' },
+    { code: 'emp102', name: 'Hardik', gender: 'Male', annualSalary: 5700.95, dateOfBirth: '09/06/1982' },
+    { code: 'emp103', name: 'Virat', gender: 'Male', annualSalary: 5900, dateOfBirth: '12/08/1979' },
+    { code: 'emp104', name: 'Rohit', gender: 'Female', annualSalary: 6500.826, dateOfBirth: '14/10/1980' }
+  ];
+}

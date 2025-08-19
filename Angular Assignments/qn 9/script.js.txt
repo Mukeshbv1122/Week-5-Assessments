@@ -1,0 +1,53 @@
+const productsList = document.getElementById('products');
+const saveForLaterList = document.getElementById('saveforlater');
+
+// Fetch and display products
+function getProducts() {
+  return fetch('http://localhost:3000/products')
+    .then(res => res.json())
+    .then(data => {
+      productsList.innerHTML = '';
+      data.forEach(product => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <strong>${product.title}</strong> - $${product.price}
+          <br>${product.description}
+          <br><button onclick="addSaveForLater(${product.id})">Add to SaveForLater</button>
+        `;
+        productsList.appendChild(li);
+      });
+      return data;
+    });
+}
+
+// Fetch and display SaveForLater list
+function getSaveForLater() {
+  return fetch('http://localhost:3000/saveforLater')
+    .then(res => res.json())
+    .then(data => {
+      saveForLaterList.innerHTML = '';
+      data.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${item.title}</strong> - $${item.price}`;
+        saveForLaterList.appendChild(li);
+      });
+      return data;
+    });
+}
+
+// Add product to SaveForLater
+function addSaveForLater(id) {
+  fetch(`http://localhost:3000/products/${id}`)
+    .then(res => res.json())
+    .then(product => {
+      fetch('http://localhost:3000/saveforLater', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(product)
+      }).then(() => getSaveForLater());
+    });
+}
+
+// Initialize
+getProducts();
+getSaveForLater();

@@ -1,0 +1,51 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+
+// for all 10 qns
+import { Qn1Component } from './Qn1/app.component';
+import { Qn2Component } from './Qn2/app.component';
+import { Qn3Component } from './Qn3/app.component';
+import { Qn4Component } from './Qn4/app.component';
+import { EmpListComponent } from './Qn5/emp-list.component';
+import { EmpAddComponent } from './Qn6/emp-add.component';
+import { Qn7Component } from './Qn7/qn7.component';
+import { ParentComponent } from './Qn8/parent.component';
+import { ChildComponent } from './Qn8/child.component';
+import { ProductComponent } from './Qn9/product.component';
+import { ProductDeleteComponent } from './Qn10/product-delete.component';
+
+// Services
+import { EmpService } from './Qn5/emp.service';
+import { ProductService } from './Qn9/product.service';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    Qn1Component,
+    Qn2Component,
+    Qn3Component,
+    Qn4Component,
+    EmpListComponent,
+    EmpAddComponent,
+    Qn7Component,
+    ParentComponent,
+    ChildComponent,
+    ProductComponent,
+    ProductDeleteComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    EmpService,
+    ProductService
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

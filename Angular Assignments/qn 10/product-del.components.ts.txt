@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-product-delete',
+  template: `<button (click)="deleteAll()">Delete All Products</button>`
+})
+export class ProductDeleteComponent {
+  constructor(private http: HttpClient) {}
+
+  deleteAll() {
+    this.http.get<any[]>('http://localhost:3000/products').subscribe(data => {
+      data.forEach(p => {
+        this.http.delete(`http://localhost:3000/products/${p.id}`).subscribe();
+      });
+      alert('All products deleted!');
+    });
+  }
+}

@@ -1,0 +1,4 @@
+<div class="container">
+  <input [(ngModel)]="name" placeholder="Enter your name">
+  <p class="output">Hello {{name}}</p>
+</div>

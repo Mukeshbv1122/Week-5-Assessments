@@ -1,0 +1,18 @@
+<div class="container">
+  <table>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Salary</th>
+      <th>DOB</th>
+    </tr>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.code | uppercase }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.gender }}</td>
+      <td>{{ emp.annualSalary | currency:'INR' }}</td>
+      <td>{{ emp.dateOfBirth | date:'fullDate' }}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products & SaveForLater</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Products</h2>
+  <ul id="products"></ul>
+
+  <h2>Save For Later</h2>
+  <ul id="saveforlater"></ul>
+
+  <button onclick="deleteAllProducts()">Delete All Products</button>
+
+  <script src="script.js"></script>
+  <script>
+    getProducts();
+    getsaveforlater();
+  </script>
+</body>
+</html>

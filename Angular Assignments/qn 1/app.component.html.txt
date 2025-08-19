@@ -1,0 +1,9 @@
+<div class="container">
+  <label>Name:</label>
+  <input [(ngModel)]="name"><br><br>
+
+  <label>Age:</label>
+  <input type="number" [(ngModel)]="age"><br><br>
+
+  <p class="output">Hello {{name}}, your age is {{age}}</p>
+</div>
