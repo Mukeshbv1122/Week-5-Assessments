@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Qn1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Qn1: Name & Age</h1>
+  <input type="text" id="name" placeholder="Name">
+  <input type="number" id="age" placeholder="Age">
+</body>
+</html>
